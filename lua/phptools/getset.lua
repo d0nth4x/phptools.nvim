@@ -11,9 +11,11 @@ local function build_get_set_table(variable, type)
     "    }",
     "",
     "    public function set" .. first_upper(variable) .. "(" .. type .. " $" .. variable
-      .. "): void",
+      .. "): self",
     "    {",
     "        $this->" .. variable .. " = $" .. variable .. ";",
+    "",
+    "        return $this;",
     "    }"
   }
 end
